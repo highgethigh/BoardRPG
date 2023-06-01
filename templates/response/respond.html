@@ -1,0 +1,17 @@
+{% extends 'announcement/base.html' %}
+{% load bootstrap4 %}
+{% block title %}Respond{% endblock title %}
+{% load static %}
+
+{% block content %}
+    <div style="background-color: white">
+        <br>
+        <h3 align="center">Текст отклика:</h3><br>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input class="btn btn-secondary" type="submit" value="Сохранить">
+        </form><br>
+        <input type=button value="Назад" class="btn btn-secondary" onClick="javascript:history.go(-1);">
+    </div>
+{% endblock content %}
